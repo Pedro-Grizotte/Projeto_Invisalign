@@ -4,10 +4,10 @@
     // regra de negocio
 
     class RegisterNegocio {
-        private $clientDados;
+        private $registerDados;
 
         public function __construct() {
-            $this->clientDados = new RegisterDados();
+            $this->registerDados = new RegisterDados();
         }
         public function register($username, $email, $password, $checkbox){
             $usuario = new ClientModel();
@@ -15,7 +15,7 @@
             $usuario->setEmail($email);
             $usuario->setPassword($password);
             $usuario->setCheckbox($checkbox);
-            return $this->clientDados->insert($usuario);       
+            return $this->registerDados->insert($usuario);       
         }
     }
 

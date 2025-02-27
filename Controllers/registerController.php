@@ -15,7 +15,6 @@
                     $password = $_POST['password'];
                     $checkbox = isset($_POST['checkbox']) ? 1 : 0; 
                     $this->clientNegocio->register($username, $email, $password, $checkbox);
-                    echo "Cliente cadastrado com sucesso!";
                 } 
             } catch (Exception $e) {    
                 echo "Usuario não cadastrado!";

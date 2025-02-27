@@ -10,7 +10,6 @@
         public function insert(ClientModel $usuario) {
             //var_dump($usuario->getUsername(), $usuario->getEmail(), $usuario->getCheckbox());
             try {
-                echo $usuario->getCheckbox();
                 $stmt = $this->database->prepare("INSERT INTO clients (Username, Email, Password, Checkbox) VALUES(?,?,?,?)");
                 $stmt->bindValue(1, $usuario->getUsername());
                 $stmt->bindValue(2, $usuario->getEmail());
