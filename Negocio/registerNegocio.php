@@ -1,13 +1,13 @@
 <?php
-    require_once '../Data/clientDados.php';
+    require_once '../Data/registerDados.php';
 
     // regra de negocio
 
-    class ClientNegocio {
+    class RegisterNegocio {
         private $clientDados;
 
         public function __construct() {
-            $this->clientDados = new ClientDados();
+            $this->clientDados = new RegisterDados();
         }
         public function register($username, $email, $password, $checkbox){
             $usuario = new ClientModel();

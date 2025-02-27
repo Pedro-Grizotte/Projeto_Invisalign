@@ -1,11 +1,11 @@
 <?php
-    require_once '../Negocio/clientNegocio.php';
+    require_once '../Negocio/registerNegocio.php';
     // Recebe os parametros da view
-    class ClientController {
+    class RegisterController {
         private $clientNegocio;
 
         public function __construct() {
-            $this->clientNegocio = new ClientNegocio();
+            $this->clientNegocio = new RegisterNegocio();
         }
         public function register(){
             try {

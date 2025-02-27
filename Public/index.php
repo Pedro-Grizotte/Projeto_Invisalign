@@ -1,8 +1,8 @@
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
-    require_once '../Controllers/ClientController.php';
-    $controller = new ClientController();
+    require_once '../Controllers/registerController.php';
+    $controller = new RegisterController();
     $controller->register();
 ?>
 <!DOCTYPE html>
@@ -18,8 +18,8 @@
     <h2 class="logo">Logo</h2>
         <nav class="navigation">
             <a href="index.php">Home</a>
-            <a href="services.php">Services</a>
-            <a href="aboutus.php">About Us</a>
+            <a href="../Views/Home/services.php">Services</a>
+            <a href="../Views/Home/aboutus.php">About Us</a>
             <button class="btnLogin-popup">Login</button>
         </nav>
     </header>

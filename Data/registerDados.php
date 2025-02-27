@@ -1,14 +1,14 @@
 <?php
     require_once '../Models/clientModel.php';
     require_once '../Configuration/database.php';
-    class clientDados {
+    class RegisterDados {
         private $database;
 
         public function __construct() {
             $this->database = Database::getInstance()->getConnection();
         }
         public function insert(ClientModel $usuario) {
-            var_dump($usuario->getUsername(), $usuario->getEmail(), $usuario->getCheckbox());
+            //var_dump($usuario->getUsername(), $usuario->getEmail(), $usuario->getCheckbox());
             try {
                 echo $usuario->getCheckbox();
                 $stmt = $this->database->prepare("INSERT INTO clients (Username, Email, Password, Checkbox) VALUES(?,?,?,?)");
