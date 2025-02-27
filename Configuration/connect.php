@@ -6,7 +6,7 @@
     define('USER','root');
     define('PASSWORD','boreal11');
     
-    class Database {
+    class Connect {
         protected $connection;
         private static $instance = null;
 
@@ -23,7 +23,7 @@
         }
         public static function getInstance() {
             if (!self::$instance) {
-                self::$instance = new Database();
+                self::$instance = new Connect();
             }
             return self::$instance;
         }

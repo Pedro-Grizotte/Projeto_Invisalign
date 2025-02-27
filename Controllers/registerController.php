@@ -17,7 +17,7 @@
                     $this->clientNegocio->register($username, $email, $password, $checkbox);
                 } 
             } catch (Exception $e) {    
-                echo "Usuario não cadastrado!";
+                echo "Erro: " . $e->getMessage();
             }          
         }
     }

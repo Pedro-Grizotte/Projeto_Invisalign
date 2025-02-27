@@ -10,6 +10,10 @@
             $this->registerDados = new RegisterDados();
         }
         public function register($username, $email, $password, $checkbox){
+            // Verificando se o usuário já existe
+            if($this->registerDados->verify($username, $email)){
+                throw new Exception("Usuário já cadastrado ao sistema!");
+            }
             $usuario = new ClientModel();
             $usuario->setUsername($username);
             $usuario->setEmail($email);

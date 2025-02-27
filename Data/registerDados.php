@@ -1,11 +1,11 @@
 <?php
     require_once '../Models/clientModel.php';
-    require_once '../Configuration/database.php';
+    require_once '../Configuration/connect.php';
     class RegisterDados {
         private $database;
 
         public function __construct() {
-            $this->database = Database::getInstance()->getConnection();
+            $this->database = Connect::getInstance()->getConnection();
         }
         public function insert(ClientModel $usuario) {
             //var_dump($usuario->getUsername(), $usuario->getEmail(), $usuario->getCheckbox());
@@ -17,7 +17,15 @@
                 $stmt->bindValue(4, $usuario->getCheckbox());
                 $stmt->execute();
             } catch (PDOException $e) {
-                die("Error : " . $e->getMessage());
+                echo "Error : " . $e->getMessage();
+            }
+        }
+        public function verify($username, $email) {
+            try {
+                $stmt = $this->database->query("SELECT COUNT(*) FROM clients WHERE Username = '".$username. "' OR Email  = '".$email. "'");
+                return $stmt->fetchColumn();
+            } catch (PDOException $e) {
+                echo "Error : " . $e->getMessage();
             }
         }
     }
