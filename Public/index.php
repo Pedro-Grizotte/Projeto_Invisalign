@@ -2,8 +2,17 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
     require_once '../Controllers/registerController.php';
+    require_once '../Controllers/loginController.php';
     $controller = new RegisterController();
-    $controller->register();
+    $logincontroller = new LoginController();
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (isset($_POST['submit'])){
+            $controller->register();
+        } else {
+            $logincontroller->login();
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,16 +42,16 @@
                 <form action="" method="POST">
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required>
+                        <input type="email" name="email" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" value="test" required>
+                        <input type="password" value="test" name="password" required>
                         <label>Password</label>
                     </div>
                     <div class="remember-forgot">
-                        <label><input type="checkbox" name="checkboxLogin">Remember me</label>
+                        <label><input type="checkbox" name="checkbox">Remember me</label>
                         <a href="#">Forgot Password?</a>
                     </div>
                     <button type="submit" class="btn_login">Login</button>

@@ -10,13 +10,13 @@
     <header>
     <h2 class="logo">Logo</h2>
         <nav class="navigation">
-            <a href="index.php">Home</a>
+            <a href="http://localhost/PHP/Projetos/Projeto_Invisalign/Public/">Home</a>
             <a href="services.php">Services</a>
             <a href="aboutus.php">About Us</a>
         </nav>
     </header>
     <main>
-            
+        <!-- Esperando o figma ainda -->            
     </main>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
