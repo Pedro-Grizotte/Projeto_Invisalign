@@ -9,8 +9,10 @@ class LoginNegocio {
     }
 
     public function authenticate($email, $password) {
+        // Recebe os dados da controller, e faz a verificação se
+        // o usuário existe e se a senha está correta
         $login = $this->loginDados->verifyCredentials($email);
-        if ($login && $password == $login['Password']) {
+        if ($login && password_verify($password, $login['Password'])) {
             return true;
         }
         return false;

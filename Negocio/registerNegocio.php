@@ -14,10 +14,17 @@
             if($this->registerDados->verify($username, $email)){
                 throw new Exception("Usuário já cadastrado ao sistema!");
             }
+            // Criando o objeto usário da Classe ClientModel
+            // Retorna esse usuario, para função insert(), que 
+            // cadastra o user ao Banco de Dados.
+
+            // Criando o hash da senha
+            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
             $usuario = new ClientModel();
             $usuario->setUsername($username);
             $usuario->setEmail($email);
-            $usuario->setPassword($password);
+            $usuario->setPassword($passwordHash);
             $usuario->setCheckbox($checkbox);
             return $this->registerDados->insert($usuario);       
         }

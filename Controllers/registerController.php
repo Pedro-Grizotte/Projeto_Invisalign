@@ -9,6 +9,8 @@
         }
         public function register(){
             try {
+                // Recebe os dados do formulario
+                // Envia esses dados para register() na camada de Negocio
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $username = $_POST['username'];
                     $email = $_POST['email'];

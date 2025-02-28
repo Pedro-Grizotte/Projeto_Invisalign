@@ -10,6 +10,7 @@ class LoginDados {
 
     public function verifyCredentials($email) {
         try {
+            // Querry que busca o usuário no banco de dados
             $stmt = $this->database->prepare("SELECT * FROM clients WHERE Email = ?");
             $stmt->bindValue(1, $email);
             $stmt->execute();

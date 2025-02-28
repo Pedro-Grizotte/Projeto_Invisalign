@@ -15,6 +15,7 @@
         }
         function connectDatabase() {
             try {
+                // Realiza a conexão com o Banco de Dados.
                 $this->connection = new PDO('mysql:host='.HOST.';dbname='.DATABASENAME, USER, PASSWORD);
             } catch (PDOException $e) {
                 echo "Error!".$e->getMessage();
