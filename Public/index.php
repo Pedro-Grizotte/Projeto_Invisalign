@@ -26,9 +26,6 @@
     <header>
     <h2 class="logo">Logo</h2>
         <nav class="navigation">
-            <a href="index.php">Home</a>
-            <a href="../Views/Home/services.php">Services</a>
-            <a href="../Views/Home/aboutus.php">About Us</a>
             <button class="btnLogin-popup">Login</button>
         </nav>
     </header>
